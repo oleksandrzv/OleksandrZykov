@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здати домашнє завдання</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Здати домашнє завдання</h1>
+    </header>
+    <main>
+        <form action="submit_assignment.php" method="post">
+            <label for="course_id">ID курсу:</label>
+            <input type="number" id="course_id" name="course_id" required>
+
+            <label for="submission">Домашнє завдання:</label>
+            <textarea id="submission" name="submission" required></textarea>
+
+            <button type="submit">Здати</button>
+        </form>
+    </main>
+</body>
+</html>

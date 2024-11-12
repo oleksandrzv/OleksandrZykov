@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка домашніх завдань</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Перевірка домашніх завдань</h1>
+    </header>
+    <main>
+        <ul id="assignmentList">
+            <!-- Приклад завдань -->
+            <li>Завдання 1 <button onclick="checkAssignment(1)">Перевірити</button></li>
+            <li>Завдання 2 <button onclick="checkAssignment(2)">Перевірити</button></li>
+        </ul>
+    </main>
+    <script>
+        function checkAssignment(id) {
+            fetch(`check_assignment.php?id=${id}`, {
+                method: 'GET'
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                document.querySelector(`button[onclick='checkAssignment(${id})']`).textContent = "Перевірено";
+            });
+        }
+    </script>
+</body>
+</html>
